@@ -14,6 +14,7 @@ var serverURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
 
 function getTranslateURL(text) {
   return serverURL + "?" + "text=" + text;
+
 }
 
 function errorHandler(error) {
@@ -22,9 +23,9 @@ function errorHandler(error) {
 }
 
 function clickHandler() {
-  var inputText = txtInput.value;
-  var URL = getTranslateURL(inputText.value);
 
+  var inputText = txtInput.value;
+  var URL = getTranslateURL(inputText);
   fetch(URL)
     .then((response) => response.json())
     .then((json) => (outputBox.innerText = json.contents.translated))
